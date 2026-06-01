@@ -16,6 +16,7 @@
     },
     "id" : "1",
     "uri" : "pipelines/bronze_lh",
+    "sourceSuggestions" : [ ],
     "pipelineSettingsInfo" : {
       "applicationName" : "bronze_lh",
       "hasApplication" : true,
@@ -86,8 +87,815 @@
     "configTopLevelPackage" : "bronze_lh",
     "configurationVersion" : "v2"
   },
-  "connections" : [ ],
-  "processes" : { },
+  "connections" : [ {
+    "id" : "2tMdmZZzx9toCUT8mjXJv$$5j1sIyaL_4O_be67Aq_iU",
+    "source" : "WH7XF4adzcTd0xKUUqB0o$$9tmOctjz_cMpj8u8jYd6q",
+    "sourcePort" : "ExoXApI7FvOPIC1Kq7ooC$$egjbW1WQ8gwA8XDsGXCkR",
+    "target" : "vHOjW-n9og3pyJYIPpyC5$$bSXAKJYCZSuWiq629qnvw",
+    "targetPort" : "UXiU-jfNJO9_oNUC8u7_9$$2m-ECMNU97EjHYdayW9jZ"
+  }, {
+    "id" : "_QYYRtpdrI8tAIKdVhvuY$$acFGdZtyDOBobSvZJnNET",
+    "source" : "j_vT6BH4kfnJJqGTDKnqO$$pX3kS2EezGMBg5r8KMaac",
+    "sourcePort" : "o_bP_i94Y9l3KiZXJXgG1$$-5lfyhsdfMLbJmRkEI0jN",
+    "target" : "x4eOrP2fVqrIZHc3z_KIt$$BxoYjvIhpAkH2n94nTtbc",
+    "targetPort" : "3OMwXXyp9801Yjb4R2Kwi$$8f3QA6k_R9Vvyqlv391Uj"
+  }, {
+    "id" : "J3RpO2Cprh6NOAK43rROS$$u3GKxPFIGbgnqtDTuVpWL",
+    "source" : "wcycEFcTlX8Hn24iK1yVn$$P5uWoNTXo6CHTvbFmUZVA",
+    "sourcePort" : "isCQx3bqX7v0K3yck2J2v$$BH7NdZ_ipJFqdwRaE7ldC",
+    "target" : "7ThtwOfo5ALc6Iar03ZX2$$JnipWbQezUwXh4NdSMfSO",
+    "targetPort" : "rZ_wRFLosamMTnplb-Q_T$$A0pHYI5sbpC6bBWGkihgN"
+  }, {
+    "id" : "q_sXo1TCqpJJfGSNYIGiP$$7thwJhHEIBUPcnk15Xvpd",
+    "source" : "7ThtwOfo5ALc6Iar03ZX2$$JnipWbQezUwXh4NdSMfSO",
+    "sourcePort" : "Gsy2E5lMvCufJ_Siz3JGL$$GbzWWggp5WlO3b51N5Dcp",
+    "target" : "giiFIDKDMryHpjbaEhvdN$$L8XycA9USDMsJwsUopiC7",
+    "targetPort" : "AZ41YqbDbT01YO8I9GdNw$$dnasp0T1gfjkZDqoyVTaA"
+  }, {
+    "id" : "nKLhqZpjT6_vqlP0mvZGV$$H44LO94Hj5Gh2puT6FeYH",
+    "source" : "vHOjW-n9og3pyJYIPpyC5$$bSXAKJYCZSuWiq629qnvw",
+    "sourcePort" : "KFqtULxI3StGBipFo-0nX$$b68zV2NF4N8wyBj9IMGPO",
+    "target" : "hrHqKcEq5XzsY7CWk37yt$$uID8mcq-WzoGELPX_4GHO",
+    "targetPort" : "OZgBt9UEK3d3X2UJ7nut2$$JPyrihv3cb0qEEnYLo95s"
+  }, {
+    "id" : "1QsLW_XakIuw5aRAg_FZ2$$YKBH37KqUdMie0tPEGmM9",
+    "source" : "x4eOrP2fVqrIZHc3z_KIt$$BxoYjvIhpAkH2n94nTtbc",
+    "sourcePort" : "JYyBpHjq3E8qgzGdWK9Wp$$IVlAL-oTEyfjNuzkdMQJx",
+    "target" : "s8UN2qr7YMcjY5yATk9nE$$3HjyxYwz2wD0cnpS_JbWE",
+    "targetPort" : "N2ccecsnK8_Nz5YTQA6T-$$pblcaWBZEUkc430VXQi38"
+  } ],
+  "processes" : {
+    "x4eOrP2fVqrIZHc3z_KIt$$BxoYjvIhpAkH2n94nTtbc" : {
+      "id" : "x4eOrP2fVqrIZHc3z_KIt$$BxoYjvIhpAkH2n94nTtbc",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "valid_product_ids",
+        "slug" : "valid_product_ids",
+        "x" : -1880,
+        "y" : -680,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Filters out products without valid product IDs to ensure data quality in product records.",
+        "autoUpdateComment" : true,
+        "dataPreview" : false,
+        "showRecordsCount" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "3OMwXXyp9801Yjb4R2Kwi$$8f3QA6k_R9Vvyqlv391Uj",
+          "slug" : "products",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "product_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Unique identifier assigned to each product.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "product_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Name of the product as shown to customers.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "category",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Product category used for grouping and classification.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "list_price",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Selling price of the product before discounts.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "cost",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Expense incurred to produce or acquire the product.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "is_active",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Indicates whether the product or service is currently available for sale.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "JYyBpHjq3E8qgzGdWK9Wp$$IVlAL-oTEyfjNuzkdMQJx",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "3OMwXXyp9801Yjb4R2Kwi$$8f3QA6k_R9Vvyqlv391Uj##product_id" ],
+        "condition" : {
+          "format" : "sql",
+          "expression" : "product_id is not null"
+        }
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/Hyz8gPVP_team_2/Hyz8gPVP_project_4.git&subPath=&tag=0.2.55&projectSubscriptionProjectId=4&path=gems/Filter",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "7ThtwOfo5ALc6Iar03ZX2$$JnipWbQezUwXh4NdSMfSO" : {
+      "id" : "7ThtwOfo5ALc6Iar03ZX2$$JnipWbQezUwXh4NdSMfSO",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "non_null_accounts",
+        "slug" : "non_null_accounts",
+        "x" : -1880,
+        "y" : -1120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Filters out records with missing account identifiers, ensuring only valid accounts are considered.",
+        "autoUpdateComment" : true,
+        "dataPreview" : false,
+        "showRecordsCount" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "rZ_wRFLosamMTnplb-Q_T$$A0pHYI5sbpC6bBWGkihgN",
+          "slug" : "accounts",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "account_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Unique identifier for the business account.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "company_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Name of the company associated with the account.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Industry sector in which the company operates.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "region",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Geographical region where the company is located.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "country",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Country where the company is registered or operates.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "annual_revenue",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Total yearly revenue generated by the company.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "employee_count",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Total number of employees working at the company.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "tier",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Classification of the company based on size, revenue, or strategic importance.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "created_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Date when the company record was first created.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "Gsy2E5lMvCufJ_Siz3JGL$$GbzWWggp5WlO3b51N5Dcp",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "rZ_wRFLosamMTnplb-Q_T$$A0pHYI5sbpC6bBWGkihgN##account_id" ],
+        "condition" : {
+          "format" : "sql",
+          "expression" : "account_id is not null"
+        }
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/Hyz8gPVP_team_2/Hyz8gPVP_project_4.git&subPath=&tag=0.2.55&projectSubscriptionProjectId=4&path=gems/Filter",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "wcycEFcTlX8Hn24iK1yVn$$P5uWoNTXo6CHTvbFmUZVA" : {
+      "id" : "wcycEFcTlX8Hn24iK1yVn$$P5uWoNTXo6CHTvbFmUZVA",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "accounts",
+        "slug" : "accounts",
+        "x" : -2080,
+        "y" : -1120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Retrieves account information from the business database for further analysis or reporting.",
+        "autoUpdateComment" : true
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "isCQx3bqX7v0K3yck2J2v$$BH7NdZ_ipJFqdwRaE7ldC",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/br_accounts"
+      }
+    },
+    "vHOjW-n9og3pyJYIPpyC5$$bSXAKJYCZSuWiq629qnvw" : {
+      "id" : "vHOjW-n9og3pyJYIPpyC5$$bSXAKJYCZSuWiq629qnvw",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "filter_nonnull_oppid",
+        "slug" : "filter_nonnull_oppid",
+        "x" : -1880,
+        "y" : -900,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Filters out records without an opportunity ID, ensuring only valid opportunities are considered.",
+        "autoUpdateComment" : true,
+        "dataPreview" : false,
+        "showRecordsCount" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "UXiU-jfNJO9_oNUC8u7_9$$2m-ECMNU97EjHYdayW9jZ",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "opp_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Unique identifier for the sales opportunity.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Unique identifier for the customer account related to the opportunity.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "opp_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Name or title of the sales opportunity.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "stage",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Current phase of the sales opportunity in the pipeline.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "amount",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Potential revenue value associated with the opportunity.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "close_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Date when the opportunity is expected to be finalized or closed.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "owner",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Name of the person responsible for managing the opportunity.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "product_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Unique identifier for the product associated with the opportunity.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "created_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Date when the opportunity record was first created.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "last_modified",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Date when the opportunity record was most recently updated.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "KFqtULxI3StGBipFo-0nX$$b68zV2NF4N8wyBj9IMGPO",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "UXiU-jfNJO9_oNUC8u7_9$$2m-ECMNU97EjHYdayW9jZ##opp_id" ],
+        "condition" : {
+          "format" : "sql",
+          "expression" : "opp_id is not null"
+        }
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/Hyz8gPVP_team_2/Hyz8gPVP_project_4.git&subPath=&tag=0.2.55&projectSubscriptionProjectId=4&path=gems/Filter",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "WH7XF4adzcTd0xKUUqB0o$$9tmOctjz_cMpj8u8jYd6q" : {
+      "id" : "WH7XF4adzcTd0xKUUqB0o$$9tmOctjz_cMpj8u8jYd6q",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "opportunities",
+        "slug" : "opportunities",
+        "x" : -2080,
+        "y" : -900,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "ExoXApI7FvOPIC1Kq7ooC$$egjbW1WQ8gwA8XDsGXCkR",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/br_opportunities"
+      }
+    },
+    "s8UN2qr7YMcjY5yATk9nE$$3HjyxYwz2wD0cnpS_JbWE" : {
+      "id" : "s8UN2qr7YMcjY5yATk9nE$$3HjyxYwz2wD0cnpS_JbWE",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "bronze_products",
+        "slug" : "bronze_products",
+        "x" : -1660,
+        "y" : -680,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "N2ccecsnK8_Nz5YTQA6T-$$pblcaWBZEUkc430VXQi38",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "product_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Unique identifier assigned to each product.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "product_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Name of the product as shown to customers.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "category",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Product category used for grouping and classification.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "list_price",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Selling price of the product before discounts.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "cost",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Expense incurred to produce or acquire the product.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "is_active",
+              "type" : "boolean",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Indicates whether the product or service is currently available for sale.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/bronze_products"
+      }
+    },
+    "hrHqKcEq5XzsY7CWk37yt$$uID8mcq-WzoGELPX_4GHO" : {
+      "id" : "hrHqKcEq5XzsY7CWk37yt$$uID8mcq-WzoGELPX_4GHO",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "bronze_opportunities",
+        "slug" : "bronze_opportunities",
+        "x" : -1660,
+        "y" : -900,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "OZgBt9UEK3d3X2UJ7nut2$$JPyrihv3cb0qEEnYLo95s",
+          "slug" : "filter_nonnull_oppid",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "opp_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Unique identifier for the sales opportunity.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "account_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Unique identifier for the customer account related to the opportunity.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "opp_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Name or title of the sales opportunity.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "stage",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Current phase of the sales opportunity in the pipeline.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "amount",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Potential revenue value associated with the opportunity.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "close_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Date when the opportunity is expected to be finalized or closed.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "owner",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Name of the person responsible for managing the opportunity.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "product_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Unique identifier for the product associated with the opportunity.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "created_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Date when the opportunity record was first created.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "last_modified",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Date when the opportunity record was most recently updated.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/bronze_opportunities"
+      }
+    },
+    "giiFIDKDMryHpjbaEhvdN$$L8XycA9USDMsJwsUopiC7" : {
+      "id" : "giiFIDKDMryHpjbaEhvdN$$L8XycA9USDMsJwsUopiC7",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "bronze_accounts",
+        "slug" : "bronze_accounts",
+        "x" : -1660,
+        "y" : -1120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "AZ41YqbDbT01YO8I9GdNw$$dnasp0T1gfjkZDqoyVTaA",
+          "slug" : "non_null_accounts",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "account_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Unique identifier for the business account.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "company_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Name of the company associated with the account.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Industry sector in which the company operates.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "region",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Geographical region where the company is located.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "country",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Country where the company is registered or operates.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "annual_revenue",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Total yearly revenue generated by the company.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "employee_count",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Total number of employees working at the company.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "tier",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Classification of the company based on size, revenue, or strategic importance.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "created_date",
+              "type" : "date",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Date when the company record was first created.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/bronze_accounts"
+      }
+    },
+    "j_vT6BH4kfnJJqGTDKnqO$$pX3kS2EezGMBg5r8KMaac" : {
+      "id" : "j_vT6BH4kfnJJqGTDKnqO$$pX3kS2EezGMBg5r8KMaac",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "products",
+        "slug" : "products",
+        "x" : -2080,
+        "y" : -680,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "o_bP_i94Y9l3KiZXJXgG1$$-5lfyhsdfMLbJmRkEI0jN",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/br_products"
+      }
+    }
+  },
   "ports" : {
     "inputs" : [ ],
     "outputs" : [ ],

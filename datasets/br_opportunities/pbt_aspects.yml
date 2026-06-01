@@ -1,0 +1,74 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: opp_id
+    type: string
+    nullable: true
+    metadata:
+      description: Unique identifier for the sales opportunity.
+      mappings: []
+      tags: []
+  - name: account_id
+    type: string
+    nullable: true
+    metadata:
+      description: Unique identifier for the customer account related to the opportunity.
+      mappings: []
+      tags: []
+  - name: opp_name
+    type: string
+    nullable: true
+    metadata:
+      description: Name or title of the sales opportunity.
+      mappings: []
+      tags: []
+  - name: stage
+    type: string
+    nullable: true
+    metadata:
+      description: Current phase of the sales opportunity in the pipeline.
+      mappings: []
+      tags: []
+  - name: amount
+    type: double
+    nullable: true
+    metadata:
+      description: Potential revenue value associated with the opportunity.
+      mappings: []
+      tags: []
+  - name: close_date
+    type: date
+    nullable: true
+    metadata:
+      description: Date when the opportunity is expected to be finalized or closed.
+      mappings: []
+      tags: []
+  - name: owner
+    type: string
+    nullable: true
+    metadata:
+      description: Name of the person responsible for managing the opportunity.
+      mappings: []
+      tags: []
+  - name: product_id
+    type: string
+    nullable: true
+    metadata:
+      description: Unique identifier for the product associated with the opportunity.
+      mappings: []
+      tags: []
+  - name: created_date
+    type: date
+    nullable: true
+    metadata:
+      description: Date when the opportunity record was first created.
+      mappings: []
+      tags: []
+  - name: last_modified
+    type: date
+    nullable: true
+    metadata:
+      description: Date when the opportunity record was most recently updated.
+      mappings: []
+      tags: []

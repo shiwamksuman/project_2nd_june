@@ -20,11 +20,95 @@ pipelines:
     language: python
     createdAt: '2026-06-01 20:32:42'
     datasets:
-      inputs: []
-      outputs: []
+      inputs:
+      - datasets/br_accounts
+      - datasets/br_opportunities
+      - datasets/br_products
+      outputs:
+      - datasets/bronze_accounts
+      - datasets/bronze_opportunities
+      - datasets/bronze_products
     subgraphs: []
     dependencies: {}
-datasets: {}
+datasets:
+  datasets/br_accounts:
+    name: br_accounts
+    description: ''
+    author: suman.shiwam@prophecy.io
+    createdAt: '2026-06-01 21:18:40'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 143
+        datasetType: Database
+        description: ''
+        author: suman.shiwam@prophecy.io
+        createdAt: '2026-06-01 21:18:40'
+  datasets/br_opportunities:
+    name: br_opportunities
+    description: ''
+    author: suman.shiwam@prophecy.io
+    createdAt: '2026-06-01 21:25:27'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 143
+        datasetType: Database
+        description: ''
+        author: suman.shiwam@prophecy.io
+        createdAt: '2026-06-01 21:25:27'
+  datasets/br_products:
+    name: br_products
+    description: ''
+    author: suman.shiwam@prophecy.io
+    createdAt: '2026-06-01 21:33:01'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 143
+        datasetType: Database
+        description: ''
+        author: suman.shiwam@prophecy.io
+        createdAt: '2026-06-01 21:33:01'
+  datasets/bronze_accounts:
+    name: bronze_accounts
+    description: ''
+    author: suman.shiwam@prophecy.io
+    createdAt: '2026-06-01 21:50:48'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 143
+        datasetType: Database
+        description: ''
+        author: suman.shiwam@prophecy.io
+        createdAt: '2026-06-01 21:50:48'
+  datasets/bronze_opportunities:
+    name: bronze_opportunities
+    description: ''
+    author: suman.shiwam@prophecy.io
+    createdAt: '2026-06-01 21:54:11'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 143
+        datasetType: Database
+        description: ''
+        author: suman.shiwam@prophecy.io
+        createdAt: '2026-06-01 21:54:11'
+  datasets/bronze_products:
+    name: bronze_products
+    description: ''
+    author: suman.shiwam@prophecy.io
+    createdAt: '2026-06-01 21:55:13'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 143
+        datasetType: Database
+        description: ''
+        author: suman.shiwam@prophecy.io
+        createdAt: '2026-06-01 21:55:13'
 templates: {}
 jobs: {}
 gemContainer:
