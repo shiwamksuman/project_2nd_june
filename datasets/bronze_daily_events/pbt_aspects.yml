@@ -1,0 +1,61 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: event_id
+    type: string
+    nullable: true
+    metadata:
+      description: Unique identifier for each event in the system.
+      mappings: []
+      tags: []
+  - name: account_id
+    type: string
+    nullable: true
+    metadata:
+      description: Unique identifier for the account associated with the event.
+      mappings: []
+      tags: []
+  - name: event_type
+    type: string
+    nullable: true
+    metadata:
+      description: Type of event that occurred, indicating the nature of the user
+        action.
+      mappings: []
+      tags: []
+  - name: event_ts
+    type: string
+    nullable: true
+    metadata:
+      description: Timestamp when the event occurred, in string format.
+      mappings: []
+      tags: []
+  - name: user_id
+    type: string
+    nullable: true
+    metadata:
+      description: Unique identifier for the user who performed the event.
+      mappings: []
+      tags: []
+  - name: session_id
+    type: string
+    nullable: true
+    metadata:
+      description: Unique identifier for each user session.
+      mappings: []
+      tags: []
+  - name: duration_sec
+    type: long
+    nullable: true
+    metadata:
+      description: Total duration of the session in seconds.
+      mappings: []
+      tags: []
+  - name: ingestion_date
+    type: string
+    nullable: true
+    metadata:
+      description: Date when the event data was ingested into the system.
+      mappings: []
+      tags: []

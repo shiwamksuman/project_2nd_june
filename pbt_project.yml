@@ -46,6 +46,21 @@ pipelines:
       - datasets/bronze_corrupt_quarantine
     subgraphs: []
     dependencies: {}
+  pipelines/daily_incremental_load:
+    name: daily_incremental_load
+    description: ''
+    author: suman.shiwam@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2026-06-02 13:41:18'
+    datasets:
+      inputs:
+      - datasets/incremental_load
+      outputs:
+      - datasets/bronze_daily_events
+    subgraphs: []
+    dependencies: {}
 datasets:
   datasets/br_accounts:
     name: br_accounts
@@ -177,6 +192,32 @@ datasets:
         description: ''
         author: suman.shiwam@prophecy.io
         createdAt: '2026-06-02 10:28:14'
+  datasets/incremental_load:
+    name: incremental_load
+    description: ''
+    author: suman.shiwam@prophecy.io
+    createdAt: '2026-06-02 14:38:26'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 143
+        datasetType: File
+        description: ''
+        author: suman.shiwam@prophecy.io
+        createdAt: '2026-06-02 14:38:26'
+  datasets/bronze_daily_events:
+    name: bronze_daily_events
+    description: ''
+    author: suman.shiwam@prophecy.io
+    createdAt: '2026-06-02 21:55:20'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 143
+        datasetType: Database
+        description: ''
+        author: suman.shiwam@prophecy.io
+        createdAt: '2026-06-02 21:55:20'
 templates: {}
 jobs: {}
 gemContainer:
