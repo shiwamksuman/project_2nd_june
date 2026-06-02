@@ -30,6 +30,22 @@ pipelines:
       - datasets/bronze_products
     subgraphs: []
     dependencies: {}
+  pipelines/error_handling:
+    name: error_handling
+    description: ''
+    author: suman.shiwam@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2026-06-01 22:02:30'
+    datasets:
+      inputs:
+      - datasets/malformed
+      outputs:
+      - datasets/bronze_accounts_validated
+      - datasets/bronze_corrupt_quarantine
+    subgraphs: []
+    dependencies: {}
 datasets:
   datasets/br_accounts:
     name: br_accounts
@@ -109,6 +125,58 @@ datasets:
         description: ''
         author: suman.shiwam@prophecy.io
         createdAt: '2026-06-01 21:55:13'
+  datasets/malformed_records:
+    name: malformed_records
+    description: ''
+    author: suman.shiwam@prophecy.io
+    createdAt: '2026-06-01 22:07:58'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 143
+        datasetType: Database
+        description: ''
+        author: suman.shiwam@prophecy.io
+        createdAt: '2026-06-01 22:07:58'
+  datasets/malformed:
+    name: malformed
+    description: ''
+    author: suman.shiwam@prophecy.io
+    createdAt: '2026-06-01 22:38:15'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 143
+        datasetType: File
+        description: ''
+        author: suman.shiwam@prophecy.io
+        createdAt: '2026-06-01 22:38:15'
+  datasets/bronze_accounts_validated:
+    name: bronze_accounts_validated
+    description: ''
+    author: suman.shiwam@prophecy.io
+    createdAt: '2026-06-02 10:27:08'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 143
+        datasetType: Database
+        description: ''
+        author: suman.shiwam@prophecy.io
+        createdAt: '2026-06-02 10:27:08'
+  datasets/bronze_corrupt_quarantine:
+    name: bronze_corrupt_quarantine
+    description: ''
+    author: suman.shiwam@prophecy.io
+    createdAt: '2026-06-02 10:28:14'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 143
+        datasetType: Database
+        description: ''
+        author: suman.shiwam@prophecy.io
+        createdAt: '2026-06-02 10:28:14'
 templates: {}
 jobs: {}
 gemContainer:

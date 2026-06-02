@@ -1,0 +1,824 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1",
+      "unitTestNullDataMigrated" : true
+    },
+    "functions" : { },
+    "codeGenConfiguration" : {
+      "editableConfig" : true,
+      "plibVersion" : {
+        "mavenVersion" : "9.3.0",
+        "pyPiVersion" : "2.1.17"
+      },
+      "sparkConfigJinjaEnabled" : true,
+      "workflowMode" : "batch"
+    },
+    "id" : "1",
+    "uri" : "pipelines/error_handling",
+    "sourceSuggestions" : [ ],
+    "pipelineSettingsInfo" : {
+      "applicationName" : "error_handling",
+      "hasApplication" : true,
+      "isFunctionsPackageDirDefined" : true,
+      "isNullValuesInUnitTestsEnabled" : true,
+      "sparkConfigOptions" : {
+        "disableSparkCreationTimeConfigGeneration" : true
+      }
+    },
+    "language" : "python",
+    "fabricId" : "143",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "sumanshiwamprophecyioteam.project2ndjune.functions",
+      "sharedFunctionPackageNames" : [ "prophecy.warehouse.functions", "prophecy.spark_basic.functions" ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ {
+      "name" : "spark.default.parallelism",
+      "value" : "4"
+    }, {
+      "name" : "spark.sql.legacy.allowUntypedScalaUDF",
+      "value" : "true"
+    } ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "5",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "4",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "error_handling",
+    "configTopLevelPackage" : "error_handling",
+    "configurationVersion" : "v2"
+  },
+  "connections" : [ {
+    "id" : "4ZrpDnL-mX4cafsIOQKaD$$smaC3e2G-cHF4r37h0THW",
+    "source" : "gqi5_sfvU8k506BF3IcKO$$tBs78oH0T3dGeobyk-bnA",
+    "sourcePort" : "Q6f59MEW8DhalAuoWOX3t$$Tle0VUcJRQIj7kAIcguKB",
+    "target" : "MTcGYvk0pJbPHURnPLXNt$$amcGOCbe5g4Vq7mtUx_tj",
+    "targetPort" : "zaeSFqR9-j4_96yv4X9WQ$$USOWs6CKdwpXfEBjIWNsk"
+  }, {
+    "id" : "cdgI9iPc4FMySICOPg3BK$$VhzFnQqgJ30b_bCz9UKiW",
+    "source" : "MTcGYvk0pJbPHURnPLXNt$$amcGOCbe5g4Vq7mtUx_tj",
+    "sourcePort" : "0TEEl9Osg69sHN09Xbrdd$$lJczbSWcfZ574-eM9Pu4w",
+    "target" : "aQ0kMq8YUc5mLh6Gm9hB-$$MRVjxxOw6qcgIIhBUjofM",
+    "targetPort" : "0tRc7mCuy8gTpSabfCdVd$$uYOESMKX73oUjG_jHfI7h"
+  }, {
+    "id" : "RVS6p0ZID21XRJ1a8JoLx$$DwRenw6V7JYoJMegDpwmD",
+    "source" : "MTcGYvk0pJbPHURnPLXNt$$amcGOCbe5g4Vq7mtUx_tj",
+    "sourcePort" : "P6sUsJOAnLAK742oLjUUY$$ce_JJTGhyr6B1RhqdmLIq",
+    "target" : "BM8CHo06Xag8gIM4E8UyB$$N9ThZF2wuRLWqngGeyeVV",
+    "targetPort" : "TKGOTgn8rOCx_IKgkMnvW$$ZZWGktPSZbiutjQTfDu-O"
+  }, {
+    "id" : "QGm9TK7euJvERk384SUEY$$HmXMNZc5H1jLvI4OQCOR4",
+    "source" : "aQ0kMq8YUc5mLh6Gm9hB-$$MRVjxxOw6qcgIIhBUjofM",
+    "sourcePort" : "rMj4yyIOBhvz9yIQiu8uX$$ZvdAWKjlbzKv2J2RDVooj",
+    "target" : "f0m90z3s9-1BfslUk8MV9$$yn69W0g7O3RnEth1ZfYAU",
+    "targetPort" : "aIp9YISP819SbShkh-FQe$$k0PwCQdMyYNwtspUaKGdj"
+  }, {
+    "id" : "5569MGa9Be4hZ7bin5UNR$$0qPEvtfe4_3dVj0kY2K1H",
+    "source" : "BM8CHo06Xag8gIM4E8UyB$$N9ThZF2wuRLWqngGeyeVV",
+    "sourcePort" : "ZuYSabYsNlQh1EY6wBPOz$$sx4kKtPlBL5P1yhjqS9f9",
+    "target" : "eWcqPpwUbJ66O9dad1LmY$$DMUuNF6k36Exa97bXt6m7",
+    "targetPort" : "iOibZJ_MR5lPj6w5hCPd0$$qN_0vgyjkY-98RjHDCdfM"
+  } ],
+  "processes" : {
+    "BM8CHo06Xag8gIM4E8UyB$$N9ThZF2wuRLWqngGeyeVV" : {
+      "id" : "BM8CHo06Xag8gIM4E8UyB$$N9ThZF2wuRLWqngGeyeVV",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "corrupted_data",
+        "slug" : "corrupted_data",
+        "x" : -880,
+        "y" : -580,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Identifies records with missing or invalid account, region, country, revenue, date, or company information, highlighting potentially unusable business data.",
+        "autoUpdateComment" : true,
+        "dataPreview" : false,
+        "showRecordsCount" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "TKGOTgn8rOCx_IKgkMnvW$$ZZWGktPSZbiutjQTfDu-O",
+          "slug" : "out1",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "account_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Unique identifier assigned to each company account.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "company_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Official name of the company associated with the account.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Business sector in which the company operates.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "region",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Geographical region where the company is located or operates.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "country",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Country where the company is registered or conducts business.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "annual_revenue",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Total yearly revenue generated by the company.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "employee_count",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Number of employees working at the company.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "tier",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Classification of the company based on business value or size.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "created_date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Date when the company record was created.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "_corrupt_record",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "ZuYSabYsNlQh1EY6wBPOz$$sx4kKtPlBL5P1yhjqS9f9",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "TKGOTgn8rOCx_IKgkMnvW$$ZZWGktPSZbiutjQTfDu-O##created_date", "TKGOTgn8rOCx_IKgkMnvW$$ZZWGktPSZbiutjQTfDu-O##annual_revenue", "TKGOTgn8rOCx_IKgkMnvW$$ZZWGktPSZbiutjQTfDu-O##region", "TKGOTgn8rOCx_IKgkMnvW$$ZZWGktPSZbiutjQTfDu-O##account_id", "TKGOTgn8rOCx_IKgkMnvW$$ZZWGktPSZbiutjQTfDu-O##company_name", "TKGOTgn8rOCx_IKgkMnvW$$ZZWGktPSZbiutjQTfDu-O##country" ],
+        "condition" : {
+          "format" : "sql",
+          "expression" : "account_id == '' \nOR account_id IS NULL\nOR region == '' \nOR region IS NULL\nOR country == ''\nOR country IS NULL\nOR annual_revenue == 'N/A##' \nOR created_date == '99-99-9999'\nOR company_name == '###CORRUPT###'"
+        }
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/Hyz8gPVP_team_2/Hyz8gPVP_project_4.git&subPath=&tag=0.2.55&projectSubscriptionProjectId=4&path=gems/Filter",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "eWcqPpwUbJ66O9dad1LmY$$DMUuNF6k36Exa97bXt6m7" : {
+      "id" : "eWcqPpwUbJ66O9dad1LmY$$DMUuNF6k36Exa97bXt6m7",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "bronze_corrupt_quarantine",
+        "slug" : "bronze_corrupt_quarantine",
+        "x" : -720,
+        "y" : -580,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "iOibZJ_MR5lPj6w5hCPd0$$qN_0vgyjkY-98RjHDCdfM",
+          "slug" : "corrupted_data",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "account_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Unique identifier assigned to each company account.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "company_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Official name of the company associated with the account.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Business sector in which the company operates.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "region",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Geographical region where the company is located or operates.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "country",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Country where the company is registered or conducts business.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "annual_revenue",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Total yearly revenue generated by the company.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "employee_count",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Number of employees working at the company.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "tier",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Classification of the company based on business value or size.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "created_date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Date when the company record was created.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "_corrupt_record",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/bronze_corrupt_quarantine"
+      }
+    },
+    "gqi5_sfvU8k506BF3IcKO$$tBs78oH0T3dGeobyk-bnA" : {
+      "id" : "gqi5_sfvU8k506BF3IcKO$$tBs78oH0T3dGeobyk-bnA",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "malformed",
+        "slug" : "malformed",
+        "x" : -1280,
+        "y" : -680,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "Q6f59MEW8DhalAuoWOX3t$$Tle0VUcJRQIj7kAIcguKB",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/malformed"
+      }
+    },
+    "MTcGYvk0pJbPHURnPLXNt$$amcGOCbe5g4Vq7mtUx_tj" : {
+      "id" : "MTcGYvk0pJbPHURnPLXNt$$amcGOCbe5g4Vq7mtUx_tj",
+      "component" : "RowDistributor",
+      "metadata" : {
+        "label" : "RowDistributor_1",
+        "slug" : "RowDistributor_1",
+        "x" : -1080,
+        "y" : -680,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "dataPreview" : false,
+        "showRecordsCount" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "zaeSFqR9-j4_96yv4X9WQ$$USOWs6CKdwpXfEBjIWNsk",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "account_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Unique identifier assigned to each company account.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "company_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Official name of the company associated with the account.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Business sector in which the company operates.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "region",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Geographical region where the company is located or operates.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "country",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Country where the company is registered or conducts business.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "annual_revenue",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Total yearly revenue generated by the company.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "employee_count",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Number of employees working at the company.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "tier",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Classification of the company based on business value or size.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "created_date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Date when the company record was created.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "_corrupt_record",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "0TEEl9Osg69sHN09Xbrdd$$lJczbSWcfZ574-eM9Pu4w",
+          "slug" : "out0"
+        }, {
+          "id" : "P6sUsJOAnLAK742oLjUUY$$ce_JJTGhyr6B1RhqdmLIq",
+          "slug" : "out1"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "outports" : [ {
+          "path" : "out0",
+          "id" : "0TEEl9Osg69sHN09Xbrdd$$lJczbSWcfZ574-eM9Pu4w",
+          "model" : {
+            "format" : "sql",
+            "expression" : "true"
+          }
+        }, {
+          "path" : "out1",
+          "id" : "P6sUsJOAnLAK742oLjUUY$$ce_JJTGhyr6B1RhqdmLIq",
+          "model" : {
+            "format" : "sql",
+            "expression" : "true"
+          }
+        } ],
+        "distributeUnmatchedRows" : null
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/Hyz8gPVP_team_2/Hyz8gPVP_project_4.git&subPath=&tag=0.2.55&projectSubscriptionProjectId=4&path=gems/RowDistributor",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    },
+    "f0m90z3s9-1BfslUk8MV9$$yn69W0g7O3RnEth1ZfYAU" : {
+      "id" : "f0m90z3s9-1BfslUk8MV9$$yn69W0g7O3RnEth1ZfYAU",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "bronze_accounts_validated",
+        "slug" : "bronze_accounts_validated",
+        "x" : -720,
+        "y" : -780,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "aIp9YISP819SbShkh-FQe$$k0PwCQdMyYNwtspUaKGdj",
+          "slug" : "clean_data",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "account_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Unique identifier assigned to each company account.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "company_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Official name of the company associated with the account.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Business sector in which the company operates.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "region",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Geographical region where the company is located or operates.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "country",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Country where the company is registered or conducts business.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "annual_revenue",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Total yearly revenue generated by the company.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "employee_count",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Number of employees working at the company.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "tier",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Classification of the company based on business value or size.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "created_date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Date when the company record was created.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "_corrupt_record",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/bronze_accounts_validated"
+      }
+    },
+    "aQ0kMq8YUc5mLh6Gm9hB-$$MRVjxxOw6qcgIIhBUjofM" : {
+      "id" : "aQ0kMq8YUc5mLh6Gm9hB-$$MRVjxxOw6qcgIIhBUjofM",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "clean_data",
+        "slug" : "clean_data",
+        "x" : -880,
+        "y" : -780,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Removes incomplete or corrupted company records to ensure data quality for business analysis.",
+        "autoUpdateComment" : true,
+        "dataPreview" : false,
+        "showRecordsCount" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "0tRc7mCuy8gTpSabfCdVd$$uYOESMKX73oUjG_jHfI7h",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "account_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Unique identifier assigned to each company account.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "company_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Official name of the company associated with the account.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "industry",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Business sector in which the company operates.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "region",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Geographical region where the company is located or operates.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "country",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Country where the company is registered or conducts business.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "annual_revenue",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Total yearly revenue generated by the company.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "employee_count",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Number of employees working at the company.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "tier",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Classification of the company based on business value or size.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "created_date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Date when the company record was created.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "_corrupt_record",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "rMj4yyIOBhvz9yIQiu8uX$$ZvdAWKjlbzKv2J2RDVooj",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "0tRc7mCuy8gTpSabfCdVd$$uYOESMKX73oUjG_jHfI7h##region", "0tRc7mCuy8gTpSabfCdVd$$uYOESMKX73oUjG_jHfI7h##account_id", "0tRc7mCuy8gTpSabfCdVd$$uYOESMKX73oUjG_jHfI7h##annual_revenue", "0tRc7mCuy8gTpSabfCdVd$$uYOESMKX73oUjG_jHfI7h##created_date", "0tRc7mCuy8gTpSabfCdVd$$uYOESMKX73oUjG_jHfI7h##company_name" ],
+        "condition" : {
+          "format" : "sql",
+          "expression" : "account_id != '' \nAND region != '' \nAND annual_revenue != 'N/A##' \nAND created_date != '99-99-9999'\nAND company_name != '###CORRUPT###'"
+        }
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/Hyz8gPVP_team_2/Hyz8gPVP_project_4.git&subPath=&tag=0.2.55&projectSubscriptionProjectId=4&path=gems/Filter",
+        "projectName" : "ProphecySparkBasicsPython"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  }
+}
