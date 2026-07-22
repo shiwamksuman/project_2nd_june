@@ -123,8 +123,41 @@
     "sourcePort" : "JYyBpHjq3E8qgzGdWK9Wp$$IVlAL-oTEyfjNuzkdMQJx",
     "target" : "s8UN2qr7YMcjY5yATk9nE$$3HjyxYwz2wD0cnpS_JbWE",
     "targetPort" : "N2ccecsnK8_Nz5YTQA6T-$$pblcaWBZEUkc430VXQi38"
+  }, {
+    "id" : "YH5bEIT_j4OBCGYBBAmZF$$FPPFeV6rQTZUfES17rDGa",
+    "source" : "QJhSGdcgurGWqH99VkxdZ$$cR2Z68B0hLbmQWuQ4k7-k",
+    "sourcePort" : "1hy1fs57Pxif8rvecGJ88$$rkSmXR3rCh90qLs_Cs3gy",
+    "target" : "QERInSrGjoC5QGDZgdiGJ$$vrES7nUQm8gLvGy0p1WLb",
+    "targetPort" : "fMc-arn7VrFU1fSMDYYn1$$8tvDBdFnGHOgvJF3fFTeP"
   } ],
   "processes" : {
+    "QJhSGdcgurGWqH99VkxdZ$$cR2Z68B0hLbmQWuQ4k7-k" : {
+      "id" : "QJhSGdcgurGWqH99VkxdZ$$cR2Z68B0hLbmQWuQ4k7-k",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "sales_transactions",
+        "slug" : "sales_transactions",
+        "x" : -2080,
+        "y" : -400,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "1hy1fs57Pxif8rvecGJ88$$rkSmXR3rCh90qLs_Cs3gy",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/sales_transactions"
+      }
+    },
     "x4eOrP2fVqrIZHc3z_KIt$$BxoYjvIhpAkH2n94nTtbc" : {
       "id" : "x4eOrP2fVqrIZHc3z_KIt$$BxoYjvIhpAkH2n94nTtbc",
       "component" : "Filter",
@@ -631,6 +664,129 @@
       },
       "properties" : {
         "datasetId" : "datasets/bronze_products"
+      }
+    },
+    "QERInSrGjoC5QGDZgdiGJ$$vrES7nUQm8gLvGy0p1WLb" : {
+      "id" : "QERInSrGjoC5QGDZgdiGJ$$vrES7nUQm8gLvGy0p1WLb",
+      "component" : "WindowFunction",
+      "metadata" : {
+        "label" : "customer_order_rank",
+        "slug" : "customer_order_rank",
+        "x" : -1900,
+        "y" : -400,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Assigns a sequence to each customer's orders and tracks the previous order amount, enabling analysis of purchase patterns over time.",
+        "autoUpdateComment" : true,
+        "dataPreview" : false,
+        "showRecordsCount" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "fMc-arn7VrFU1fSMDYYn1$$8tvDBdFnGHOgvJF3fFTeP",
+          "slug" : "sales_transactions",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "order_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Unique identifier for each order placed by a customer.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "customer_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Unique identifier for the customer who placed the order.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "order_date",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Date when the order was placed.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "amount",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Total value of the order.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "category",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Type of product or service purchased in the order.",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "uWnhiQG6GuMloL97ZBDix$$sjnZmL7SE25mh9mMq4tJG",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "userSpecifiedEnd" : null,
+        "expressionColumns" : [ {
+          "target" : "order_rank",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "row_number()"
+          },
+          "description" : "",
+          "_row_id" : "m8vnrrys6A"
+        }, {
+          "target" : "prev_amount",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "lag(amount,1)"
+          },
+          "description" : "",
+          "_row_id" : "BDl9f4qXmd"
+        } ],
+        "frameType" : "row",
+        "partitionColumns" : [ {
+          "format" : "sql",
+          "expression" : "customer_id"
+        } ],
+        "activeTab" : "windowUse",
+        "columnsSelector" : [ "fMc-arn7VrFU1fSMDYYn1$$8tvDBdFnGHOgvJF3fFTeP##amount" ],
+        "specifyFrame" : false,
+        "frameStart" : null,
+        "orderColumns" : [ {
+          "expression" : {
+            "format" : "sql",
+            "expression" : "order_date"
+          },
+          "sortType" : "asc"
+        } ],
+        "frameEnd" : null,
+        "userSpecifiedStart" : null
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/Hyz8gPVP_team_2/Hyz8gPVP_project_4.git&subPath=&tag=0.2.55&projectSubscriptionProjectId=4&path=gems/WindowFunction",
+        "projectName" : "ProphecySparkBasicsPython"
       }
     },
     "hrHqKcEq5XzsY7CWk37yt$$uID8mcq-WzoGELPX_4GHO" : {

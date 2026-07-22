@@ -7,6 +7,7 @@ from prophecy.utils import *
 from bronze_lh.graph import *
 
 def pipeline(spark: SparkSession) -> None:
+    df_sales_transactions = sales_transactions(spark)
     df_products = products(spark)
     df_valid_product_ids = valid_product_ids(spark, df_products)
     df_accounts = accounts(spark)
@@ -14,6 +15,7 @@ def pipeline(spark: SparkSession) -> None:
     df_opportunities = opportunities(spark)
     df_filter_nonnull_oppid = filter_nonnull_oppid(spark, df_opportunities)
     bronze_products(spark, df_valid_product_ids)
+    df_customer_order_rank = customer_order_rank(spark, df_sales_transactions)
     bronze_opportunities(spark, df_filter_nonnull_oppid)
     bronze_accounts(spark, df_non_null_accounts)
 

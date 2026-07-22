@@ -24,6 +24,7 @@ pipelines:
       - datasets/br_accounts
       - datasets/br_opportunities
       - datasets/br_products
+      - datasets/sales_transactions
       outputs:
       - datasets/bronze_accounts
       - datasets/bronze_opportunities
@@ -218,6 +219,19 @@ datasets:
         description: ''
         author: suman.shiwam@prophecy.io
         createdAt: '2026-06-02 21:55:20'
+  datasets/sales_transactions:
+    name: sales_transactions
+    description: ''
+    author: suman.shiwam@prophecy.io
+    createdAt: '2026-06-04 12:51:52'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 143
+        datasetType: File
+        description: ''
+        author: suman.shiwam@prophecy.io
+        createdAt: '2026-06-04 12:51:52'
 templates: {}
 jobs: {}
 gemContainer:

@@ -16,4 +16,4 @@ def malformed(spark: SparkSession) -> DataFrame:
         .option("header", True)\
         .option("sep", ",")\
         .option("columnNameOfCorruptRecord", "_corrupt_record")\
-        .csv("dbfs:/Volumes/main/prophecy_lh/malformed/malformed_records.csv")
+        .csv(f"{Config.loc}malformed_records.csv")

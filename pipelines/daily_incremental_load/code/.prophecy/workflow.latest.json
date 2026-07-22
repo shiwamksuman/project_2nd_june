@@ -101,8 +101,8 @@
       "metadata" : {
         "label" : "incremental_load",
         "slug" : "incremental_load",
-        "x" : -1360,
-        "y" : -1120,
+        "x" : -1960,
+        "y" : -1400,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -130,8 +130,8 @@
       "metadata" : {
         "label" : "bronze_daily_events",
         "slug" : "bronze_daily_events",
-        "x" : -1180,
-        "y" : -1120,
+        "x" : -1640,
+        "y" : -1400,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,

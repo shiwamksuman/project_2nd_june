@@ -43,7 +43,16 @@
     "configuration" : {
       "common" : {
         "type" : "record",
-        "fields" : [ ]
+        "fields" : [ {
+          "name" : "loc",
+          "kind" : {
+            "type" : "string",
+            "value" : "dbfs:/Volumes/main/prophecy_lh/malformed/"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        } ]
       },
       "oldCommon" : {
         "type" : "record",
@@ -76,7 +85,7 @@
       "externalDependencies" : [ ]
     } ],
     "isImported" : false,
-    "interimMode" : "Full",
+    "interimMode" : "Selective",
     "interimModeEnabled" : true,
     "visualCodeInterimMode" : "Disabled",
     "recordsLimit" : {
@@ -133,7 +142,7 @@
         "isImported" : false,
         "comment" : "Identifies records with missing or invalid account, region, country, revenue, date, or company information, highlighting potentially unusable business data.",
         "autoUpdateComment" : true,
-        "dataPreview" : false,
+        "dataPreview" : true,
         "showRecordsCount" : false
       },
       "ports" : {
@@ -245,7 +254,7 @@
         "autoUpdateOnRun" : false
       },
       "properties" : {
-        "columnsSelector" : [ "TKGOTgn8rOCx_IKgkMnvW$$ZZWGktPSZbiutjQTfDu-O##created_date", "TKGOTgn8rOCx_IKgkMnvW$$ZZWGktPSZbiutjQTfDu-O##annual_revenue", "TKGOTgn8rOCx_IKgkMnvW$$ZZWGktPSZbiutjQTfDu-O##region", "TKGOTgn8rOCx_IKgkMnvW$$ZZWGktPSZbiutjQTfDu-O##account_id", "TKGOTgn8rOCx_IKgkMnvW$$ZZWGktPSZbiutjQTfDu-O##company_name", "TKGOTgn8rOCx_IKgkMnvW$$ZZWGktPSZbiutjQTfDu-O##country" ],
+        "columnsSelector" : [ "TKGOTgn8rOCx_IKgkMnvW$$ZZWGktPSZbiutjQTfDu-O##region", "TKGOTgn8rOCx_IKgkMnvW$$ZZWGktPSZbiutjQTfDu-O##created_date", "TKGOTgn8rOCx_IKgkMnvW$$ZZWGktPSZbiutjQTfDu-O##company_name", "TKGOTgn8rOCx_IKgkMnvW$$ZZWGktPSZbiutjQTfDu-O##country", "TKGOTgn8rOCx_IKgkMnvW$$ZZWGktPSZbiutjQTfDu-O##account_id", "TKGOTgn8rOCx_IKgkMnvW$$ZZWGktPSZbiutjQTfDu-O##annual_revenue" ],
         "condition" : {
           "format" : "sql",
           "expression" : "account_id == '' \nOR account_id IS NULL\nOR region == '' \nOR region IS NULL\nOR country == ''\nOR country IS NULL\nOR annual_revenue == 'N/A##' \nOR created_date == '99-99-9999'\nOR company_name == '###CORRUPT###'"
@@ -389,7 +398,10 @@
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
-        "isImported" : false
+        "isImported" : false,
+        "comment" : "Loads company account records from a file, including entries that may have data issues, to support data quality checks and analysis.",
+        "autoUpdateComment" : true,
+        "dataPreview" : true
       },
       "ports" : {
         "inputs" : [ ],
@@ -690,7 +702,7 @@
         "isImported" : false,
         "comment" : "Removes incomplete or corrupted company records to ensure data quality for business analysis.",
         "autoUpdateComment" : true,
-        "dataPreview" : false,
+        "dataPreview" : true,
         "showRecordsCount" : false
       },
       "ports" : {
@@ -802,7 +814,7 @@
         "autoUpdateOnRun" : false
       },
       "properties" : {
-        "columnsSelector" : [ "0tRc7mCuy8gTpSabfCdVd$$uYOESMKX73oUjG_jHfI7h##region", "0tRc7mCuy8gTpSabfCdVd$$uYOESMKX73oUjG_jHfI7h##account_id", "0tRc7mCuy8gTpSabfCdVd$$uYOESMKX73oUjG_jHfI7h##annual_revenue", "0tRc7mCuy8gTpSabfCdVd$$uYOESMKX73oUjG_jHfI7h##created_date", "0tRc7mCuy8gTpSabfCdVd$$uYOESMKX73oUjG_jHfI7h##company_name" ],
+        "columnsSelector" : [ "0tRc7mCuy8gTpSabfCdVd$$uYOESMKX73oUjG_jHfI7h##account_id", "0tRc7mCuy8gTpSabfCdVd$$uYOESMKX73oUjG_jHfI7h##annual_revenue", "0tRc7mCuy8gTpSabfCdVd$$uYOESMKX73oUjG_jHfI7h##created_date", "0tRc7mCuy8gTpSabfCdVd$$uYOESMKX73oUjG_jHfI7h##region", "0tRc7mCuy8gTpSabfCdVd$$uYOESMKX73oUjG_jHfI7h##company_name" ],
         "condition" : {
           "format" : "sql",
           "expression" : "account_id != '' \nAND region != '' \nAND annual_revenue != 'N/A##' \nAND created_date != '99-99-9999'\nAND company_name != '###CORRUPT###'"
