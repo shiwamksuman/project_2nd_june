@@ -7,6 +7,7 @@ from prophecy.utils import *
 from error_handling.graph import *
 
 def pipeline(spark: SparkSession) -> None:
+    print_config_loc(spark)
     df_malformed = malformed(spark)
     df_RowDistributor_1_out0, df_RowDistributor_1_out1 = RowDistributor_1(spark, df_malformed)
     df_corrupted_data = corrupted_data(spark, df_RowDistributor_1_out1)

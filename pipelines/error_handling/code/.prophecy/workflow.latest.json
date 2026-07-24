@@ -60,7 +60,7 @@
       },
       "fabrics" : { },
       "instances" : { },
-      "selected" : "default",
+      "selected" : "dev",
       "nonEditable" : [ ],
       "isSubscribedPipelineWithPipelineConfigs" : false
     },
@@ -142,7 +142,7 @@
         "isImported" : false,
         "comment" : "Identifies records with missing or invalid account, region, country, revenue, date, or company information, highlighting potentially unusable business data.",
         "autoUpdateComment" : true,
-        "dataPreview" : true,
+        "dataPreview" : false,
         "showRecordsCount" : false
       },
       "ports" : {
@@ -254,7 +254,7 @@
         "autoUpdateOnRun" : false
       },
       "properties" : {
-        "columnsSelector" : [ "TKGOTgn8rOCx_IKgkMnvW$$ZZWGktPSZbiutjQTfDu-O##region", "TKGOTgn8rOCx_IKgkMnvW$$ZZWGktPSZbiutjQTfDu-O##created_date", "TKGOTgn8rOCx_IKgkMnvW$$ZZWGktPSZbiutjQTfDu-O##company_name", "TKGOTgn8rOCx_IKgkMnvW$$ZZWGktPSZbiutjQTfDu-O##country", "TKGOTgn8rOCx_IKgkMnvW$$ZZWGktPSZbiutjQTfDu-O##account_id", "TKGOTgn8rOCx_IKgkMnvW$$ZZWGktPSZbiutjQTfDu-O##annual_revenue" ],
+        "columnsSelector" : [ "TKGOTgn8rOCx_IKgkMnvW$$ZZWGktPSZbiutjQTfDu-O##annual_revenue", "TKGOTgn8rOCx_IKgkMnvW$$ZZWGktPSZbiutjQTfDu-O##account_id", "TKGOTgn8rOCx_IKgkMnvW$$ZZWGktPSZbiutjQTfDu-O##region", "TKGOTgn8rOCx_IKgkMnvW$$ZZWGktPSZbiutjQTfDu-O##company_name", "TKGOTgn8rOCx_IKgkMnvW$$ZZWGktPSZbiutjQTfDu-O##created_date", "TKGOTgn8rOCx_IKgkMnvW$$ZZWGktPSZbiutjQTfDu-O##country" ],
         "condition" : {
           "format" : "sql",
           "expression" : "account_id == '' \nOR account_id IS NULL\nOR region == '' \nOR region IS NULL\nOR country == ''\nOR country IS NULL\nOR annual_revenue == 'N/A##' \nOR created_date == '99-99-9999'\nOR company_name == '###CORRUPT###'"
@@ -387,21 +387,49 @@
         "datasetId" : "datasets/bronze_corrupt_quarantine"
       }
     },
+    "UCPfe7a9Kiggq_N2x3Zcz$$pvDf6-qu-sFjztx5kYWhn" : {
+      "id" : "UCPfe7a9Kiggq_N2x3Zcz$$pvDf6-qu-sFjztx5kYWhn",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "print_config_loc",
+        "slug" : "print_config_loc",
+        "x" : -1400,
+        "y" : -760,
+        "phase" : -1,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Displays the configured location setting, supporting transparency and traceability for business operations.",
+        "autoUpdateComment" : true
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : true,
+        "autoUpdateOnRun" : true
+      },
+      "properties" : {
+        "script" : "print(\"loc:\",Config.loc)",
+        "scriptMethodHeader" : "def Script(spark: SparkSession) -> None:",
+        "scriptMethodFooter" : "    return "
+      }
+    },
     "gqi5_sfvU8k506BF3IcKO$$tBs78oH0T3dGeobyk-bnA" : {
       "id" : "gqi5_sfvU8k506BF3IcKO$$tBs78oH0T3dGeobyk-bnA",
       "component" : "Source",
       "metadata" : {
         "label" : "malformed",
         "slug" : "malformed",
-        "x" : -1280,
-        "y" : -680,
+        "x" : -1720,
+        "y" : -660,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
         "isImported" : false,
         "comment" : "Loads company account records from a file, including entries that may have data issues, to support data quality checks and analysis.",
         "autoUpdateComment" : true,
-        "dataPreview" : true
+        "dataPreview" : false
       },
       "ports" : {
         "inputs" : [ ],
@@ -702,7 +730,7 @@
         "isImported" : false,
         "comment" : "Removes incomplete or corrupted company records to ensure data quality for business analysis.",
         "autoUpdateComment" : true,
-        "dataPreview" : true,
+        "dataPreview" : false,
         "showRecordsCount" : false
       },
       "ports" : {
@@ -814,7 +842,7 @@
         "autoUpdateOnRun" : false
       },
       "properties" : {
-        "columnsSelector" : [ "0tRc7mCuy8gTpSabfCdVd$$uYOESMKX73oUjG_jHfI7h##account_id", "0tRc7mCuy8gTpSabfCdVd$$uYOESMKX73oUjG_jHfI7h##annual_revenue", "0tRc7mCuy8gTpSabfCdVd$$uYOESMKX73oUjG_jHfI7h##created_date", "0tRc7mCuy8gTpSabfCdVd$$uYOESMKX73oUjG_jHfI7h##region", "0tRc7mCuy8gTpSabfCdVd$$uYOESMKX73oUjG_jHfI7h##company_name" ],
+        "columnsSelector" : [ "0tRc7mCuy8gTpSabfCdVd$$uYOESMKX73oUjG_jHfI7h##company_name", "0tRc7mCuy8gTpSabfCdVd$$uYOESMKX73oUjG_jHfI7h##annual_revenue", "0tRc7mCuy8gTpSabfCdVd$$uYOESMKX73oUjG_jHfI7h##region", "0tRc7mCuy8gTpSabfCdVd$$uYOESMKX73oUjG_jHfI7h##account_id", "0tRc7mCuy8gTpSabfCdVd$$uYOESMKX73oUjG_jHfI7h##created_date" ],
         "condition" : {
           "format" : "sql",
           "expression" : "account_id != '' \nAND region != '' \nAND annual_revenue != 'N/A##' \nAND created_date != '99-99-9999'\nAND company_name != '###CORRUPT###'"
