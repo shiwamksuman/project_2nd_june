@@ -30,22 +30,6 @@ pipelines:
       - datasets/bronze_products
     subgraphs: []
     dependencies: {}
-  pipelines/error_handling:
-    name: error_handling
-    description: ''
-    author: suman.shiwam@prophecy.io
-    mode: batch
-    artefactID: ''
-    language: python
-    createdAt: '2026-06-01 22:02:30'
-    datasets:
-      inputs:
-      - datasets/malformed
-      outputs:
-      - datasets/bronze_accounts_validated
-      - datasets/bronze_corrupt_quarantine
-    subgraphs: []
-    dependencies: {}
   pipelines/daily_incremental_load:
     name: daily_incremental_load
     description: ''
