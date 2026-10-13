@@ -1,0 +1,97 @@
+{
+  "metainfo" : {
+    "type" : "Databricks",
+    "fabricId" : "96",
+    "jobId" : "jobs/pbt_oauth_test",
+    "name" : "pbt_oauth_test",
+    "schedule" : "None",
+    "scheduleTimeZone" : "UTC",
+    "jobClusterMode" : {
+      "clusterMode" : "Single"
+    },
+    "enabled" : false,
+    "defaultClusterSize" : "shiwam_practice",
+    "alerting" : {
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false,
+      "onDurationWarningThresholdExceeded" : false
+    },
+    "maxConcurrentRuns" : 1,
+    "processDefaultSettings" : {
+      "retries" : 0,
+      "alerting" : {
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false,
+        "onDurationWarningThresholdExceeded" : false
+      },
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false,
+      "onDurationWarningThresholdExceeded" : false
+    }
+  },
+  "processes" : {
+    "lIWjD5K5XRbOAg4lr-e0T$$PPz4bcZP27RNvtA92E4HV" : {
+      "id" : "lIWjD5K5XRbOAg4lr-e0T$$PPz4bcZP27RNvtA92E4HV",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "Pipeline_0",
+        "slug" : "Pipeline_0",
+        "x" : -280,
+        "y" : -420
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "qq3aIg59EWmX0h9HDLriH$$dnf4GUCjTxnMgWLZxVqYX",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "fd4MLvhBarlDmTSE7qYgV$$WVJ1zX8g4QhXvzOaisOGg",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false,
+          "onDurationWarningThresholdExceeded" : false
+        },
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false,
+        "onDurationWarningThresholdExceeded" : false
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/error_handling",
+        "configurations" : {
+          "selectedInstance" : "default",
+          "instances" : {
+            "project_2nd_june" : [ "default" ]
+          },
+          "overrides" : { },
+          "schema" : [ ]
+        },
+        "projectId" : "50242"
+      },
+      "conditional" : {
+        "runIf" : "ALL_SUCCESS",
+        "forEach" : false,
+        "forEachConfig" : "",
+        "forEachConcurrency" : 1,
+        "forEachInputVariable" : "",
+        "forEachIterationCount" : null
+      },
+      "parent" : null
+    }
+  },
+  "connections" : [ ]
+}
