@@ -61,6 +61,21 @@ pipelines:
       - datasets/bronze_daily_events
     subgraphs: []
     dependencies: {}
+  pipelines/dup_ppl:
+    name: dup_ppl
+    description: null
+    author: suman.shiwam@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2026-09-10 18:38:52'
+    datasets:
+      inputs:
+      - datasets/incremental_load
+      outputs:
+      - datasets/bronze_daily_events
+    subgraphs: []
+    dependencies: {}
 datasets:
   datasets/br_accounts:
     name: br_accounts
